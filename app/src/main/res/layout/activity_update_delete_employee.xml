@@ -13,15 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:hint="Enter Employee no"
-        />
+        android:inputType="number" />
 
     <Button
-        android:id="@+id/btnEmployeeId"
+        android:id="@+id/btnEmployeeIdSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
         android:text="Search"
-        />
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/etUpdateName"
@@ -35,26 +36,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="Enter salary" />
+        android:hint="Enter salary"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/etUpdateAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="Enter age" />
+        android:hint="Enter age"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Update" />
+        android:background="@color/colorPrimary"
+        android:text="Update"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="Delete" />
+        android:background="@color/colorPrimary"
+        android:text="Delete"
+        android:textColor="#ffffff" />
 </LinearLayout>

@@ -19,20 +19,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="Enter salary" />
+        android:hint="Enter salary"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="Enter age" />
+        android:hint="Enter age"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:text="register" />
+        android:background="@color/colorPrimary"
+        android:text="register"
+        android:textColor="#ffffff" />
 
 </LinearLayout>
