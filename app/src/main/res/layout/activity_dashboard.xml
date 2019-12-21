@@ -9,26 +9,37 @@
 
     <Button
         android:id="@+id/btnShowEmployee"
-        android:layout_margin="15dp"
-        android:text="show all employee"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="show all employee"
+        android:textColor="#ffffff" />
+
     <Button
         android:id="@+id/btnRegisterEmployee"
-        android:layout_margin="15dp"
-        android:text="register employee"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="register employee"
+        android:textColor="#ffffff" />
+
     <Button
         android:id="@+id/btnSearchEmployee"
-        android:layout_margin="15dp"
-        android:text="search employee"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="search employee"
+        android:textColor="#ffffff" />
+
     <Button
         android:id="@+id/btnUpdateDelete"
-        android:layout_margin="15dp"
-        android:text="update / delete employee"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimary"
+        android:text="update / delete employee"
+        android:textColor="#ffffff" />
 </LinearLayout>
