@@ -1,4 +1,4 @@
-package np.com.devish.employeeapi;
+package np.com.devish.employeeapi.model;
 
 public class EmployeeCUD {
     private int id;
