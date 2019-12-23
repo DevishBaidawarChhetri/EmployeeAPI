@@ -1,12 +1,15 @@
 package np.com.devish.employeeapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import np.com.devish.employeeapi.API.EmployeeAPI;
@@ -20,13 +23,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ShowAllEmployeeActivity extends AppCompatActivity {
 
-    TextView tvOutput;
+    //TextView tvOutput;
+    private RecyclerView recyclerView;
+    List<Employee> employeeList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_all_employee);
 
-        tvOutput = findViewById(R.id.tvOutput);
+        //tvOutput = findViewById(R.id.tvOutput);
+        recyclerView = findViewById(R.id.recyclerView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URL.base_url)
@@ -47,12 +53,14 @@ public class ShowAllEmployeeActivity extends AppCompatActivity {
                 }
                 List<Employee> employeeList = response.body();
                 for (Employee emp: employeeList){
-                    String data = "";
-                    data += "Name is: " +emp.getEmployee_name() + "\n";
-                    data += "Salary is: " +emp.getEmployee_salary() + "\n";
-                    data += "Age is: " +emp.getEmployee_age() + "\n";
-                    data += "-----------------------------------" + "\n";
-                    tvOutput.append(data);
+                    // String data = "";
+                    // data += "Name is: " +emp.getEmployee_name() + "\n";
+                    // data += "Salary is: " +emp.getEmployee_salary() + "\n";
+                    // data += "Age is: " +emp.getEmployee_age() + "\n";
+                    // data += "-----------------------------------" + "\n";
+                    //tvOutput.append(data);
+
+                    employeeList.add(new Employee(emp.getId(), emp.getEmployee_name(), emp.getEmployee_salary(), emp.getEmployee_age()));
                 }
             }
 
@@ -62,5 +70,8 @@ public class ShowAllEmployeeActivity extends AppCompatActivity {
                 Toast.makeText(ShowAllEmployeeActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        EmployeesAdapter employeesAdapter = new EmployeesAdapter(this, employeeList);
+        recyclerView.setAdapter(employeesAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
 }
